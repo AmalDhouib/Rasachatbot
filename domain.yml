@@ -1,0 +1,115 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+ 
+  - find_the_best_sector 
+  - statics
+  - modele
+  - predict_likes
+ 
+  - frequency
+  - asking_for_plt
+  - predict_uncomplete
+ 
+  - thanks
+  - mse
+  - mse_all
+  - all_models
+  - questions
+  - site_question
+ 
+ 
+
+  
+actions:
+  - action_show_image1
+  - action_show_image2
+  - action_predict_likes
+  - action_show_image3
+  - action_predict_high_likes
+
+
+  
+entities:
+  - secteur
+
+slots:
+  secteur:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+
+       
+
+      
+
+ 
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.pinimg.com/originals/a6/18/0a/a6180ab2dc9458bc20061a8fe6b46c6f.png"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+ 
+  utter_ask_for_algorithm:
+  - text: "I have chosen Linear Regression Algorithm.In reality I had tasted a lot of Regresssion Algorithm but the best one is Linear Regression because It have the best mse. "
+  utter_ask_secteur:
+  - text: "Please provide the sector for which you want the likes prediction."
+  utter_thank:
+  - text: "You are welcome .Don't hesitate to ask others questions."
+  utter_mse:
+  - text: "Yes of course the mse of Linear Regression is  0.9831162682137992"
+  utter_mse_all:
+  - text: "Yes of course  there are all values of mse :MSE Linear Regression: 0.9831162682137992
+           MSE SVR: 1.0807309131798095
+           MSE Decision Tree: 1.1357911093686246
+           MSE Random Forest: 1.7794639182742413"
+  utter_models_all:
+  - text: "To make this decision I trained Linear Regression , SVR , Decision Tree and Random Forest "
+  utter_site_response:
+  - text: "This data comes from https://lespepitestech.com/"
+  utter_response:
+  - text: |
+       Hi, how are you? I hope you are fine.
+        
+        Here are the questions that you can ask:
+        
+        1. Can you tell me the most demanded sector?
+        2. Tell me the statistics found.
+        3. Can you tell me the frequency of the number of likes?
+        4. What is the model that you will use to predict the number of likes for each sector?
+        5. I want to know the number of likes of the domain and tell me the name of the domain.
+        6. Can you tell me the value of MSE, please?
+        7. Can you give me all the MSE of all models?
+        8. From which website did you extract all this information?
+        9. Can you give me the figure using the linear regression model? 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  
